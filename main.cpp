@@ -28,11 +28,27 @@ bool Compare(const std::string& p_A_filename, const std::string& p_B_filename) {
         throw;
     }
 
+    //variables
     char buffA[max_bytes];
     char buffB[max_bytes];
     uint32_t prevchkA = 0;
     uint32_t prevchkB = 0;
 
+    while (p_A_file) {
+        p_A_file.read(buffA, max_bytes); //to only read 1024 bytes max
+        std::streamsize pA = p_A_file.gcount();
+        if (pA == 0) break; //end of file
 
-    return false;
+        p_B_file.read(buffB, max_bytes);
+        std::streamsize pB = p_B_file.gcount();
+
+        if (pB < pA) return false; //B is smaller than A
+
+        prevchkA = MyChkSum(buffA, pA, prevchkA);
+        prevchkB = MyChkSum(buffB, pB, prevchkB);
+
+        if (prevchkA != prevchkB) return false;
+    }
+
+    return true;
 }
