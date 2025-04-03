@@ -1,3 +1,0 @@
-/Users/kinga/CLionProjects/Protecta/cmake-build-debug/CMakeFiles/Protecta.dir
-/Users/kinga/CLionProjects/Protecta/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/kinga/CLionProjects/Protecta/cmake-build-debug/CMakeFiles/rebuild_cache.dir
