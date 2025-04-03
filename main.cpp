@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <cstdint>
 
 const size_t max_bytes = 1024;
 
